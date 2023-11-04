@@ -64,6 +64,7 @@ router.put('/:post_id', async (req, res) => {
             }
         )
         res.status(200).json(postData);
+
     }catch (err) {
         res.status(500).json(err);
     }

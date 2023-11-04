@@ -22,6 +22,9 @@ const loginFormHandler = async (event) => {
   }
 };
 
+const element = document.querySelector("#lgi");
+element.classList.add("active");
+
 document
   .querySelector('.login-form')
   .addEventListener('submit', loginFormHandler);

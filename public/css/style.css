@@ -1,0 +1,19 @@
+header{
+    background-color: #0D0D0D;
+    color: #F2F2E9;
+}
+
+.btn{
+    color: #F2F2E9;
+    font-size: 19px;
+
+}
+
+.btn:hover{
+    color: #2EDFF2;
+
+}
+
+a:hover{
+    text-decoration:none;
+}
