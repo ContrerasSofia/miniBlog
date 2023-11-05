@@ -17,3 +17,24 @@ header{
 a:hover{
     text-decoration:none;
 }
+
+.card-hder{
+    padding: 1%;
+    background-color: #0D0D0D;
+    color: #F2F2E9;
+}
+.card-text{
+    padding: 0.75%;
+}
+
+body{
+    background-color:#F2F2E9 ;
+}
+
+.card{
+    background-color: #F2F2E9;
+}
+
+footer{
+    color: #049DD9;
+}

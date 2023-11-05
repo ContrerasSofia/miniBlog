@@ -74,7 +74,8 @@ router.put('/:post_id', async (req, res) => {
 router.get('/', async (req, res) => {
     try {
         const postsData = await Post.findAll({
-          include: [{ model: Comment }],
+          nested: true,
+          include: [{ model: Comment, include:[{ model:User}] }, {model: User}],
         });
         res.status(200).json(postsData);
       } catch (err) {

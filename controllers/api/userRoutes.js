@@ -10,9 +10,10 @@ router.post('/signup', async (req, res) => {
     });
 
     req.session.save(() => {
-      req.session.loggedIn = true;
+      req.session.user_id = dbUserData.id;
+      req.session.logged_in = true;
 
-      res.status(200).json(dbUserData);
+      res.json({ user: dbUserData, message: 'You are now logged in!' });
     });
   } catch (err) {
     console.log(err);
@@ -24,7 +25,6 @@ router.post('/login', async (req, res) => {
   try {
     // Find the user who matches the posted e-mail address
     const userData = await User.findOne({ where: { email: req.body.email } });
-    console.log(userData);
     if (!userData) {
       res
         .status(400)

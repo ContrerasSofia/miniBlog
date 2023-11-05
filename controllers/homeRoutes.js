@@ -6,7 +6,7 @@ const withAuth = require('../utils/auth');
 router.get('/', withAuth, async (req, res) => {
   try {
     const postsData = await Post.findAll({
-      include: [{ model: Comment }],
+      include: [{ model: Comment, include:[{ model:User}] }, {model: User}],
     });
 
     const posts =  postsData.map((project) => project.get({ plain: true }));
@@ -35,7 +35,6 @@ router.get('/dashboard', withAuth, async (req, res) => {
   // If a session exists, redirect the request to the homepage
   try {
     const postsData = await Post.findAll({
-      include: [{ model: Comment }],
       where: { user_id: req.session.user_id}
     });
 

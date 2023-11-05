@@ -1,2 +1,20 @@
-<h1>home</h1>
+{{#each posts as |post| }}
+    <div class="card">
+        <div class="card-hder"> 
+            <h5 class="d-inline">{{post.title}}</h5>       
+        </div>
+        <div class="card-body">
+            <p class="card-text">{{post.text}}</p>
+            <footer class="blockquote-footer">{{post.user.name}}  <cite title="Source Title">{{post.createdDate}}</cite></footer>
+        </div>
+    </div>
+    {{#each post.comments as |comment| }}
+        <div class="card">
+            <div class="card-body">
+                <p class="card-text">{{comment.text}}</p>
+                <footer class="blockquote-footer"><cite title="Source Title">{{comment.user.name}}</cite></footer>
+            </div>
+        </div>
+    {{/each}}
+{{/each}}
 <script src="/js/home.js"></script>
